@@ -19,13 +19,16 @@
             var rand = new Random();
             int random = int.Parse(txtRandom.Text);
             int amount = int.Parse(txtAmount.Text);
+            int total = 0;
             string output = "";
 
             for(int x = 0; x < amount; x++)
             {
-                output += rand.Next(random) + ",";
+                int randomNumber = rand.Next(random);
+                total += randomNumber;
+                output += randomNumber + ",";
             }
-            txtOutput.Text = output.Substring(0, output.Length - 1);
+            txtOutput.Text = output + " Total: " + total;
         }
         else
         {
